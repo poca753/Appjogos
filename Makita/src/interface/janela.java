@@ -1,6 +1,7 @@
 package
 import java.awt.CardLayout;
 import java.security.Principal;
+import javax.swing.JFrame;
 
 import javax.swing.JPanel;
 
@@ -10,14 +11,17 @@ import javax.swing.JFrame;
 public class janela extends JFrame{
     public Janela(){
         this.setBounds(0,0,1920,1080);
-        Cardlayout controleTela = new 
-        CardLayout();
+        Cardlayout controleTela = new CardLayout();
         JPanel telas = new JPanel();
         (controleTela);
         LoginPanel LoginPanel = LoginPanel(telas, this)
-        PrincipalPanel PrincipalPanel = new Principal() {
-            
-        };
+        PrincipalPanel PrincipalPanel = new Principal(telas, this);
+
+        this.add(telas);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setUndecorated(true);
+        this.setVisible(true);
     }
 
 }
